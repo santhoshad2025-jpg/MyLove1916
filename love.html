@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our Love</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="video-bg">
+
+<h1 id="typing" class="love-title"></h1>
+
+<video width="600" controls autoplay>
+    <source src="myvideo.mp4" type="video/mp4">
+</video>
+
+<h2 style="color: rgb(203, 12, 5);">Our Beautiful Memories 💕</h2>
+
+<div class="slideshow">
+   <img class="slide" src="photo1.jpg">
+   <img class="slide" src="photo2.jpg">
+   <img class="slide" src="photo3.jpg">
+   <img class="slide" src="photo4.jpg">
+   <img class="slide" src="photo5.jpg">
+   <img class="slide" src="photo6.jpg">
+   <img class="slide" src="photo7.jpg">
+   <img class="slide" src="photo8.jpg">
+   <img class="slide" src="photo9.jpg">
+   <img class="slide" src="photo10.jpg">
+   <img class="slide" src="photo11.jpg">
+   <img class="slide" src="photo12.jpg">
+   <img class="slide" src="photo13.jpg">
+   <img class="slide" src="photo14.jpg">
+   <img class="slide" src="photo15.jpg">
+
+</div>
+
+<canvas id="fireworks"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/fireworks-js@2/dist/index.umd.js"></script>
+
+<script>
+let text = "Sivaranjani... my love... 💖 Happy Rose Day 🌹";
+let i = 0;
+
+function typeEffect(){
+    if(i < text.length){
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 150);
+    }
+}
+typeEffect();
+</script>
+
+<script>
+let index = 0;
+showSlides();
+
+function showSlides(){
+    let slides = document.getElementsByClassName("slide");
+
+    for(let i=0;i<slides.length;i++){
+        slides[i].style.display = "none";
+    }
+
+    index++;
+    if(index > slides.length){ index = 1; }
+
+    slides[index-1].style.display = "block";
+    setTimeout(showSlides, 3000);
+}
+</script>
+
+<script>
+const container = document.getElementById('fireworks');
+const fireworks = new Fireworks.default(container);
+fireworks.start();
+</script>
+
+<script>
+window.onload = function(){
+   if(localStorage.getItem("musicPlaying") === "true"){
+       let audio = new Audio("theme.mp3");
+       audio.loop = true;
+       audio.play();
+   }
+};
+</script>
+
+
+<script src="script.js"></script>
+</body>
+</html>

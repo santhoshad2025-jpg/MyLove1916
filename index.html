@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rose Day Surprise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="rose-bg">
+
+<audio id="bgMusic" loop>
+   <source src="theme.mp3" type="audio/mp3">
+</audio>
+
+<div class="center">
+    <h1 class="title">Happy Rose Day 🌹 Sivaranjani</h1>
+    <button onclick="startEverything()" class="start-btn">Start 💗</button>
+</div>
+
+<script>
+function startEverything(){
+   let music = document.getElementById("bgMusic");
+   music.play();
+
+   // Save in browser that music is playing
+   localStorage.setItem("musicPlaying", "true");
+
+   // Go to next page after 1 second
+   setTimeout(function(){
+       window.location.href = "login.html";
+   }, 1000);
+}
+</script>
+
+
+<script src="script.js"></script>
+</body>
+</html>
